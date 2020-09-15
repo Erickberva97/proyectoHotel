@@ -57,6 +57,7 @@ public class frminicio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         escritorio.setBackground(new java.awt.Color(102, 255, 255));
+        escritorio.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
 
         lblidpersona.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lblidpersona.setText("jLabel1");
@@ -145,6 +146,11 @@ public class frminicio extends javax.swing.JFrame {
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/pagos.png"))); // NOI18N
         jMenuItem1.setText("Pagos");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         mnureservas.add(jMenuItem1);
 
         menuBar.add(mnureservas);
@@ -267,6 +273,14 @@ public class frminicio extends javax.swing.JFrame {
         frmreserva.txttrabajador.setText(lblnombre.getText() + " " + lblapaterno.getText());
         frmreserva.idusuario=Integer.parseInt(lblidpersona.getText());
     }//GEN-LAST:event_contentMenuItemActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        frmPago form = new frmPago();
+        escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
